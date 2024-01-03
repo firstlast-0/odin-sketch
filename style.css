@@ -1,0 +1,14 @@
+#container {
+    margin: 0 550px;
+}
+
+#container > div {
+    display: flex;
+}
+
+div div {
+    background: peachpuff;
+    border: 2px solid black;
+    height: 46px;
+    flex: 1;
+}
