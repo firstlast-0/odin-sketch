@@ -17,7 +17,7 @@ button {
 }
 
 div div {
-    background: white;
+    background: rgba(0, 0, 0, 0);
     border: 0.1px solid black;
     flex: 1;
 }

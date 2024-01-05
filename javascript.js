@@ -1,3 +1,7 @@
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 function removeAllC(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
@@ -31,7 +35,10 @@ function drawGrid(size) {
             di.appendChild(div);
             div.addEventListener('mouseover', (e) => {
                 let d = e.target;
-                d.style.backgroundColor = 'black';
+                let r = getRandomInt(255);
+                let g = getRandomInt(255);
+                let b = getRandomInt(255);               
+                d.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
             });
         }
     }
