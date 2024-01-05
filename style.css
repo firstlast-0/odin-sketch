@@ -1,15 +1,23 @@
+button {
+    display: block;
+    margin: auto;    
+}
 
 #container {
-    margin: 0 550px;
+    margin: 10px 550px;
+    width: 804px;
+    height: 804px;
+    display: flex;
+    flex-direction: column;
 }
 
 #container > div {
     display: flex;
+    flex-grow: 1;
 }
 
 div div {
     background: white;
-    border: 2px solid black;
-    height: 46px;
+    border: 0.1px solid black;
     flex: 1;
 }
