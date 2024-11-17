@@ -23,22 +23,25 @@ newG.addEventListener('click', (e) => {
     }        
 });
 
+let opacity = 0.1;
 function drawGrid(size) {
     for (let i = 0; i < size; i++) {
-        let div = document.createElement('div');
-        div.id = 'div' + i;
-        cont.appendChild(div);
+        let row = document.createElement('div');
+        row.id = 'div' + i;
+        cont.appendChild(row);
     
-        let di = document.querySelector(`#div${i}`);
+        let rowRef = document.querySelector(`#div${i}`);
         for (let j = 0; j < size; j++) {
-            let div = document.createElement('div');        
-            di.appendChild(div);
-            div.addEventListener('mouseover', (e) => {
-                let d = e.target;
-                let r = getRandomInt(255);
-                let g = getRandomInt(255);
-                let b = getRandomInt(255);               
-                d.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            let cell = document.createElement('div');        
+            rowRef.appendChild(cell);
+            cell.addEventListener('mouseover', (event) => {
+                let hoveredCell = event.target;
+                let r = 0; // getRandomInt(255);
+                let g = 0;
+                let b = 0;
+                hoveredCell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                hoveredCell.style.opacity = opacity;
+                opacity += 0.1;
             });
         }
     }
